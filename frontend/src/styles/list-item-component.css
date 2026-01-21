@@ -1,0 +1,83 @@
+ .main-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-item__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.card-project {
+    color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+    min-height: 270px;
+    max-height: 300px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    background-color: white;
+    margin: 15px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.project-link {
+    text-decoration: none;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* MÓVIL */
+@media (max-width: 420px) {
+    .list-item__container {
+        padding: 0 8px;
+    }
+
+    .card-project {
+        width: calc(100% - 16px);
+        padding: 15px;
+        min-height: 240px;
+        margin: 10px 0;
+    }
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .list-item__container {
+        padding: 0;
+    }
+
+    .project-link {
+        max-width: 100%;
+    }
+}
+
+/* DESKTOP GRANDE */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1200px;
+    }
+}

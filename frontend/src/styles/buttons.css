@@ -1,0 +1,41 @@
+button,
+.create-button {
+  width: 160px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 20px 8px;
+  padding: 6px;
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #8176af -2%, #c0b7e8 98%);
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+/* MÓVIL */
+@media (max-width: 420px) {
+  button,
+  .create-button {
+    width: 140px;
+    height: 45px;
+    font-size: 13px;
+    margin: 15px 4px;
+  }
+  
+  .button-container {
+    gap: 12px;
+  }
+}

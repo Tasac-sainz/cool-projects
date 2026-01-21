@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "coolprojects",
+        "version": "1.0.0",
+        "description": "API para mostrar proyectos de desarrollo web"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Servidor de desarrollo"
+        }
+
+    ],
+    "paths": {
+        "/projects": {
+            "get": {
+                "summary": "Listado de proyectos",
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": { "type": "number" },
+                                            "nameProj": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "techs": { "type": "string" },
+                                            "slogan": {"type": "string"},
+                                            "demo": {"type": "string"},
+                                            "repo": {"type":"string"},
+                                            "projectImage": {"type": "string"},
+                                            "fk_id_author": {"type": "number"}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/project": {
+            "post": {
+                "summary": "Añade un nuevo proyecto a la API",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nameProj": { "type": "string" },
+                                    "description": { "type": "string" },
+                                    "slogan": { "type": "string" },
+                                    "demo": { "type": "string" },
+                                    "repo": { "type": "string" },
+                                    "projectImage": { "type": "string" }
+                                },
+                                "required": ["nameProj", "description", "techs"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Proyecto correctamente añadido"
+                    }
+                }
+            }
+        },
+
+        "/project/:id": {
+            "get": {
+                "summary": "Obtiene un proyecto por su ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": { "type": "number" },
+                                        "nameProj": { "type": "string" },
+                                        "description": { "type": "string" },
+                                        "techs": { "type": "string" },
+                                        "slogan": { "type": "string" },
+                                        "demo": { "type": "string" },
+                                        "repo": { "type": "string" },
+                                        "projectImage": { "type": "string" }
+            
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }          
+}

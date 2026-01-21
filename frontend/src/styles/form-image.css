@@ -1,0 +1,60 @@
+.form__images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+.form__images div {
+  display: flex;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.project-button,
+.author-name {
+  width: 160px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 20px 4px;
+  padding: 6px;
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #8176af -2%, #c0b7e8 98%);
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+/* MÓVIL */
+@media (max-width: 420px) {
+  .form__images {
+    gap: 16px;
+  }
+
+  .project-button,
+  .author-name {
+    width: 100%;
+    max-width: 280px;
+    height: 45px;
+    font-size: 13px;
+    margin: 15px auto;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .project-photo {
+    width: 520.8px;
+    height: 545.7px;
+  }
+}
