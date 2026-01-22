@@ -24,10 +24,11 @@ app.get("/api/project/:id", getProjectByIdController);
 app.post("/api/project", addProjectsController);
 
 // Ruta a los archivos estáticos del build
-app.use(express.static(path.join(__dirname, "..", "public")));
+const publicPath = path.join(__dirname, "public");
+app.use(express.static(publicPath));
 // Cualquier ruta del frontend → index.html
-app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(publicPath, "index.html"));
 });
 // Configuración para escuchar en el puerto definido
 app.listen(PORT, () => {
