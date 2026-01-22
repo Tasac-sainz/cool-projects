@@ -24,7 +24,6 @@ app.get("/api/project/:id", getProjectByIdController);
 app.post("/api/project", addProjectsController);
 
 // Ruta a los archivos estáticos del build
-app.use("/cool-projects", express.static(path.join(__dirname, "..", "public")));
 app.use(express.static(path.join(__dirname, "..", "public")));
 // Cualquier ruta del frontend → index.html
 app.use((req, res) => {
