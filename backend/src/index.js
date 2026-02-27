@@ -23,7 +23,7 @@ app.get("/api/project/:id", getProjectByIdController);
 app.post("/api/project", addProjectsController);
 
 // Ruta a los archivos estáticos del build
-const publicPath = path.join(__dirname, "public");
+const publicPath = path.join(__dirname, "../../frontend/dist");
 app.use(express.static(publicPath));
 // Cualquier ruta del frontend → index.html
 app.get("/*splat", (req, res) => {
