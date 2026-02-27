@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -8,8 +9,6 @@ const {
 } = require("./controllers");
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-require("dotenv").config();
 
 // Configuración para subir límite de respuesta
 app.use(express.json({ limit: "25mb" }));
@@ -27,7 +26,7 @@ app.post("/api/project", addProjectsController);
 const publicPath = path.join(__dirname, "public");
 app.use(express.static(publicPath));
 // Cualquier ruta del frontend → index.html
-app.get("*", (req, res) => {
+app.get("/*splat", (req, res) => {
     res.sendFile(path.join(publicPath, "index.html"));
 });
 // Configuración para escuchar en el puerto definido
